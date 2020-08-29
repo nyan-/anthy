@@ -1,6 +1,5 @@
 /*
- * ╔М╔╟╓н╫пно
- * $Id: logger.c,v 1.8 2002/05/14 13:24:47 yusuke Exp $
+ * Ц┐╜Ц┌╟Ц│╝Е┤╨Е┼⌡
  */
 #include <stdio.h>
 #include <stdarg.h>
