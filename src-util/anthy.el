@@ -71,7 +71,7 @@
 (defvar anthy-highlight-face nil)
 (defvar anthy-underline-face nil)
 (copy-face 'highlight 'anthy-highlight-face)
-(set-face-underline-p 'anthy-highlight-face t)
+(set-face-underline 'anthy-highlight-face t)
 (copy-face 'underline 'anthy-underline-face)
 
 ;;
@@ -864,7 +864,7 @@
 ;; leim の activate
 ;;
 (defun anthy-leim-activate (&optional name)
-  (setq inactivate-current-input-method-function 'anthy-leim-inactivate)
+  (setq deactivate-current-input-method-function 'anthy-leim-inactivate)
   (setq anthy-leim-active-p t)
   (anthy-update-mode)
   (when (eq (selected-window) (minibuffer-window))
@@ -874,7 +874,7 @@
 ;; emacsのバグ避けらしいです
 ;;
 (defun anthy-leim-exit-from-minibuffer ()
-  (inactivate-input-method)
+  (deactivate-input-method)
   (when (<= (minibuffer-depth) 1)
     (remove-hook 'minibuffer-exit-hook 'anthy-leim-exit-from-minibuffer)))
 
